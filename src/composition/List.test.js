@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import List from './List';
+import Card from './Card';
 
 // This is the test case.
 it('Renders without crashing', () => {
