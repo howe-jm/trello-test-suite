@@ -40,11 +40,7 @@ it('Renders the UI as expected with multiple cards', () => {
     .create(
       <List
         cards={[
-          {
-            id: 'a',
-            title: 'First card',
-            content: 'lorem ipsum',
-          },
+          { id: 'a', title: 'First card', content: 'lorem ipsum' },
           { id: 'b', title: 'Second card', content: 'lorem ipsum' },
           { id: 'e', title: 'Fifth card', content: 'lorem ipsum' },
         ]}
