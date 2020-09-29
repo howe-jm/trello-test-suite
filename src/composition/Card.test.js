@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './Card';
+import renderer from 'react-test-render';
 
 // This is the test case.
 it('Renders without crashing', () => {
@@ -10,4 +11,9 @@ it('Renders without crashing', () => {
   ReactDOM.render(<Card />, div);
   // Clean up the created element.
   ReactDOM.unmountComponentAtNode(div);
+});
+
+it('Renders the UI as expected', () => {
+  const tree = renderer.create(<Card />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
