@@ -12,3 +12,44 @@ it('Renders without crashing', () => {
   // Clean up the created element.
   ReactDOM.unmountComponentAtNode(div);
 });
+
+it('Renders the UI as expected with no cards', () => {
+  const tree = renderer.create(<List cards={[]} />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('Renders the UI as expected with one card', () => {
+  const tree = renderer
+    .create(
+      <List
+        cards={[
+          {
+            id: 'a',
+            title: 'First card',
+            content: 'lorem ipsum',
+          },
+        ]}
+      />
+    )
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('Renders the UI as expected with multiple cards', () => {
+  const tree = renderer
+    .create(
+      <List
+        cards={[
+          {
+            id: 'a',
+            title: 'First card',
+            content: 'lorem ipsum',
+          },
+          { id: 'b', title: 'Second card', content: 'lorem ipsum' },
+          { id: 'e', title: 'Fifth card', content: 'lorem ipsum' },
+        ]}
+      />
+    )
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
