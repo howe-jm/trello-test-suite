@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import List from './List';
-import renderer from 'react-test-render';
+import renderer from 'react-test-renderer';
 
 // This is the test case.
 it('Renders without crashing', () => {
