@@ -19,19 +19,7 @@ it('Renders the UI as expected with no cards', () => {
 });
 
 it('Renders the UI as expected with one card', () => {
-  const tree = renderer
-    .create(
-      <List
-        cards={[
-          {
-            id: 'a',
-            title: 'First card',
-            content: 'lorem ipsum',
-          },
-        ]}
-      />
-    )
-    .toJSON();
+  const tree = renderer.create(<List cards={[{ id: 'a', title: 'First card', content: 'lorem ipsum' }]} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
